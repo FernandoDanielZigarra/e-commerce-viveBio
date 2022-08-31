@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head', { title : "Register" }) %>
+
+
+    <body class="register">
+        <div class="header_register">
+            <a href="/"><img src="/images/logo.png" alt=""></a>
+        </div>
+        <div class="header_register_mobile">
+            <%- include('../partials/header') %>
+        </div>
+        <main>
+            <section class="register_container">
+                <div class="register_box-introduccion">
+                    <div class="container_register-box1">
+                        <p style="text-shadow: 1px 1px 2px black;">Binvenido a </p>
+                        <p style="color: var(--verdeFuerte);text-shadow: 1px 1px 2px black;">ViveBio</p>
+                    </div>
+                    <div class="container_register-box2">
+                        <p style="text-shadow: 1px 1px 2px black;">Ya tenés cuenta?</p>
+                        <a href="/users/login"
+                            style="color: var(--verdeFuerte);text-shadow: 1px 1px 1px black;">Logueate!</a>
+                    </div>
+                </div>
+                <h1>Registro</h1>
+                <form action="" method="POST" enctype="multipart/form-data" id="register-form">
+                    <article class="register_sub-container">
+                        <div class="register_sub-container1">
+                            <div class="register_form-box">
+                                <label for="firstname">Nombre</label>
+
+                                <div class="register_box-input">
+                                    <input
+                                        class="register_form-input <%= locals.errores && errores.firstname ? 'register_error_input' : null %>"
+                                        type="text" id="firstname" name="firstname" placeholder="Ingresa tu nombre"
+                                        value="<%= locals.old && old.firstname ? old.firstname : null %>">
+
+                                    <div class="register_error_box-stamp <%= locals.errores && errores.firstname ? 'register_error_icon' : null %>"
+                                        id="errorFirstnameCross">
+                                        <span class="register_error_stamp"></span>
+                                    </div>
+                                </div>
+                                <span class="register_alert" id="errorFirstname">
+                                    <%= locals.errores && errores.firstname ? errores.firstname.msg : null %>
+                                </span>
+                            </div>
+
+                            <div class=" register_form-box">
+                                <label for="lastname">Apellido</label>
+                                <div class="register_box-input">
+                                    <input
+                                        class="register_form-input <%= locals.errores && errores.lastname ? 'register_error_input' : null %>"
+                                        type="text" id="lastname" name="lastname" placeholder="Ingresa tu apellido"
+                                        value="<%= locals.old && old.lastname ? old.lastname : null %>">
+                                    <div class="register_error_box-stamp <%= locals.errores && errores.lastname ? 'register_error_icon' : null %>"
+                                        id="errorLastnameCross">
+                                        <span class="register_error_stamp"></span>
+                                    </div>
+                                </div>
+                                <span class="register_alert" id="errorLastname">
+                                    <%= locals.errores && errores.lastname ? errores.lastname.msg : null %>
+                                </span>
+                            </div>
+                            <div class=" register_form-box">
+                                <label for="email">E-mail</label>
+                                <div class="register_box-input">
+                                    <input
+                                        class="register_form-input email_register <%= locals.errores && errores.email ? 'register_error_input' : null %>"
+                                        type="email" id="email" name="email" placeholder="Ingresa tu email"
+                                        value="<%= locals.old && old.email ? old.email : null %>">
+                                    <div class="register_error_box-stamp <%= locals.errores && errores.email ? 'register_error_icon' : null %>"
+                                        id="errorEmailCross">
+                                        <span class="register_error_stamp"></span>
+                                    </div>
+                                </div>
+                                <span class="register_alert" id="errorEmail">
+                                    <%= locals.errores && errores.email ? errores.email.msg : null %>
+                                </span>
+                            </div>
+                            <div class=" register_form-box">
+                                <label for="username">Usuario</label>
+                                <div class="register_box-input">
+                                    <input
+                                        class="register_form-input <%= locals.errores && errores.username ? 'register_error_input' : null %>"
+                                        type="text" id="username" name="username" placeholder="Ingresa usuario"
+                                        value="<%= locals.old && old.username ? old.username : null %>">
+                                    <div class="register_error_box-stamp <%= locals.errores && errores.username ? 'register_error_icon' : null %>"
+                                        id="errorUsernameCross">
+                                        <span class="register_error_stamp"></span>
+                                    </div>
+                                </div>
+                                <span class="register_alert" id="errorUsername">
+                                    <%= locals.errores && errores.username ? errores.username.msg : null %>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="register_sub-container2">
+                            <div class="register_form-box">
+                                <label for="password">Contraseña</label>
+                                <div class="register_box-input">
+                                    <input
+                                        class="register_form-input <%= locals.errores && errores.password ? 'register_error_input' : null %>"
+                                        type="password" id="password" name="password"
+                                        placeholder="Ingresa tu contraseña">
+                                    <div class="register_error_box-stamp <%= locals.errores && errores.password ? 'register_error_icon' : null %>"
+                                        id="errorPasswordCross">
+                                        <span class="register_error_stamp"></span>
+                                    </div>
+                                </div>
+                                <span class="register_alert" id="errorPassword">
+                                    <%= locals.errores && errores.password ? errores.password.msg : null %>
+                                </span>
+                            </div>
+                            <div class=" register_form-box">
+                                <label for="password2">Repite tu contraseña</label>
+                                <div class="register_box-input">
+                                    <input
+                                        class="register_form-input <%= locals.errores && errores.password2 ? 'register_error_input' : null %>"
+                                        type="password" id="password2" name="password2"
+                                        placeholder="Vuelve a ingresa tu contraseña">
+                                    <div class="register_error_box-stamp <%= locals.errores && errores.password2 ? 'register_error_icon' : null %>"
+                                        id="errorPassword2Cross">
+                                        <span class="register_error_stamp"></span>
+                                    </div>
+                                </div>
+                                <span class="register_alert" id="errorPassword2">
+                                    <%= locals.errores && errores.password2 ? errores.password2.msg : null %>
+                                </span>
+                            </div>
+
+                            <div class="container-image-preview" id="container-img">
+                                <span>Imagen de perfil</span>
+                                <span id="deltePreview" class="register_delete_preview"><i class="fas fa-times-circle"></i></span>
+                                <label class="icon_add_image" for="image"><i class="fas fa-plus-circle"></i></label>
+                                <input class="input_image" type="file" name="image" id="image" accept="image/*"
+                                    style="display:none;">
+                                <div class="box-image" id="box-image-preview">
+                                </div>
+                                <div class="register_errors-box">
+                                    <span class="register_alert" id="errorImage">
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </article>
+                    <div class="register_terminos">
+                        <input
+                            class="<%= locals.errores && errores.terminos ? 'register_error_input_terminos' : null %>"
+                            type="checkbox" name="terminos" id="terminos">
+                        <label for="terminos" style="font-size: 12px;">Acepto términos y condiciones</label>
+                    </div>
+                    <div class="register_errors-box">
+                        <span class="register_alert" id="errorTerminos">
+                            <%= locals.errores && errores.terminos ? errores.terminos.msg : null %>
+                        </span>
+                    </div>
+                    <div class="box_error_submit_login">
+                        <span id="errorSubmitLogin" class="register_alert"></span>
+                    </div>
+                    <div class=" register_button">
+                        <button type="submit">Enviar</button>
+                    </div>
+                </form>
+                <div class="verify_email" style="display: none;">
+                    <h4 style="margin-left:15%;">le enviamos un codigo al correo: </h4>
+                    <div style="display: flex; flex-direction:column; align-items: center;">
+                        <input style="width:50%; " class="register_form-input validation_input" type="Number"
+                            id="code_register" name="code" placeholder="Ingrese el codigo">
+                        <span class="register_alert" style="width: 140px;" id="code_invalid">
+                        </span>
+                    </div>
+
+                    <div class="register_button">
+                        <button class="verify_button">Verificar</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <script src="/javascript/register.js"></script>
+    </body>
+
+</html>

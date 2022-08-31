@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head', { title : "Login" }) %>
+
+    <body class="login">
+        <div class="header_login">
+            <a href="/"><img src="/images/logo.png" alt=""></a>
+        </div>
+        <div class="header_login_mobile">
+            <%- include('../partials/header') %>
+        </div>
+        <main>
+            <div class="login_general_container">
+                <div class="login_container_video">
+                    <section class="login_video">
+                        <video controls autoplay muted loop class="video_login">
+                            <source type="video/mp4" src="/video/video_login.mp4">
+                        </video>
+                    </section>   
+                </div>
+                <div class="login_form-container">
+                    <section class="login_container">
+                        <div class="box_introduccion">
+                            <div class="login_box_1">
+                                <p style="text-shadow: 1px 1px 2px black;">Binvenido a </p>
+                                <p style="color: var(--verdeFuerte);text-shadow: 1px 1px 2px black;">ViveBio</p>
+                            </div>
+                            <div class="login_box_2">
+                                <p style="text-shadow: 1px 1px 2px black;">No tenés cuenta?</p>
+                                <a href="/users/register"
+                                    style="color: var(--verdeFuerte);text-shadow: 1px 1px 1px black;">Registrate!</a>
+                            </div>
+                        </div>
+                        <h1>Login</h1>
+                        <div class="login_box-gf">
+                            <div class="login_google">
+                                <a class="login_button_google" href="/auth/google"><i class="fab fa-google-plus" id="btnSingGoogle"></i></a>
+                            </div>
+                            <div class="login_facebook">
+                                <a class="login_button_facebook" href="/auth/facebook"><i class="fab fa-facebook"></i></a>
+                            </div>
+                        </div>
+                        <form method="POST" id="form-login">
+                            <article>
+                                <div class="login_form-box">
+                                    <label for="username">Usuario</label>
+                                    <input class="login_form-input" type="text" id="username" name="username"
+                                        placeholder="Ingresa usuario" value="">
+                                    <span class="register_alert" id="errorUsername">
+                                        <%= locals.errors && errors.username ? errors.username.msg : null%>
+                                    </span>
+                                </div>
+                                <div class="login_form-box">
+                                    <label for="password">Contraseña</label>
+                                    <input class="login_form-input" type="password" id="password" name="password"
+                                        placeholder="Ingresa tu contraseña">
+                                    <span class="register_alert" id="errorPassword">
+                                        <%= locals.errors && errors.password ? errors.password.msg : null%>
+                                    </span>
+                                    <span class="register_alert" id="errorLogin"></span>
+                                </div>
+                            </article>
+                            <div class="login_center">
+                                <div class="register_terminos">
+                                    <input class="" type="checkbox" name="remember" id="remember">
+                                    <label for="remember" style="font-size: 12px;">Recordar</label>
+                                </div>
+                                <div class="login_button">
+                                    <button type="submit">Enviar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+        </main>
+        <script src="/javascript/login.js"></script>
+        <script src="/javascript/loginGoogle.js"></script>
+        <script src=""></script>
+    </body>
+
+</html>
