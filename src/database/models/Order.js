@@ -4,13 +4,13 @@ module.exports = (sequelize, DataTypes) => {
     
     const cols = {
         id : {
-            type : DataTypes.INTEGER.UNSIGNED,
+            type : DataTypes.INTEGER,
             autoIncrement : true,
             allowNull : false,
             primaryKey : true
         },
         status_id : {
-            type: DataTypes.INTEGER.UNSIGNED,
+            type: DataTypes.INTEGER,
             allowNull : false,
             references: {
                 model: {
@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
             }
         },
         user_id : {
-            type: DataTypes.INTEGER.UNSIGNED,
+            type: DataTypes.INTEGER,
             allowNull : false,
             references: {
                 model: {
@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
             }
         },
         payment_id : {
-            type : DataTypes.INTEGER.UNSIGNED,
+            type : DataTypes.INTEGER,
             allowNull : false,
             references: {
                 model: {
@@ -40,11 +40,11 @@ module.exports = (sequelize, DataTypes) => {
             }
         },
         total : {
-            type: DataTypes.DECIMAL(6,2).UNSIGNED,
+            type: DataTypes.DECIMAL(6,2),
             allowNull : false
         },
         products_id : {
-            type : DataTypes.INTEGER.UNSIGNED,
+            type : DataTypes.INTEGER,
             allowNull : false,
             references: {
                 model: {
@@ -54,11 +54,11 @@ module.exports = (sequelize, DataTypes) => {
             }
         },
         number : {
-            type : DataTypes.INTEGER.UNSIGNED,
+            type : DataTypes.INTEGER,
             allowNull : false
         },
         amount : {
-            type : DataTypes.INTEGER.UNSIGNED,
+            type : DataTypes.INTEGER,
             allowNull : false
         }
     }

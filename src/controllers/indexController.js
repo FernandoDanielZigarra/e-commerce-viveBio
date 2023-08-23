@@ -19,6 +19,7 @@ module.exports = {
                 ]
             })
             let category = await db.Category.findAll()
+
             return res.render('index', {
                 products,
                 category,

@@ -4,13 +4,13 @@ module.exports = (sequelize, DataTypes) => {
 
     const cols = {
         id : {
-            type : DataTypes.INTEGER.UNSIGNED,
+            type : DataTypes.INTEGER,
             autoIncrement : true,
             allowNull : false,
             primaryKey : true
         },
         user_id : {
-            type : DataTypes.INTEGER.UNSIGNED,
+            type : DataTypes.INTEGER,
             allowNull : false,
             references: {
                 model: {
@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
             }
         },
         product_id : {
-            type : DataTypes.INTEGER.UNSIGNED,
+            type : DataTypes.INTEGER,
             allowNull : false,
             references: {
                 model: {
@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
             }
         },
         cant : {
-            type : DataTypes.INTEGER.UNSIGNED,
+            type : DataTypes.INTEGER,
             allowNull : false,
             default : 1
         }

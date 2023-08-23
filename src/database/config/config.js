@@ -10,12 +10,13 @@ module.exports = {
     port : process.env.DB_PORT
   },
   test: {
-    username: "root",
+    username: "postgres",
     password: "root",
     database: "vivebio_db",
-    host: "127.0.0.1",
-    dialect: "mysql",
-    port: 3306
+    host: "localhost",
+    dialect: "postgres",
+    port: 5432,
+    /* operatorsAliases: false, */
   },
   production: {
     username: "root",
@@ -25,3 +26,5 @@ module.exports = {
     dialect: "mysql"
   }
 }
+
+

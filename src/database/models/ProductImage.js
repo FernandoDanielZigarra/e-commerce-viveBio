@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     const cols = {
 
         id: {
-            type: DataTypes.INTEGER.UNSIGNED,
+            type: DataTypes.INTEGER,
             autoIncrement: true,
             allowNull: false,
             primaryKey: true
@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
         },
 
         product_id: {
-            type: DataTypes.INTEGER.UNSIGNED,
+            type: DataTypes.INTEGER,
             allowNull: false,
             references: {
                 model: {
@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
             }
         },
         primary : {
-            type : DataTypes.TINYINT(1)
+            type : DataTypes.BOOLEAN
         }
 
     }
