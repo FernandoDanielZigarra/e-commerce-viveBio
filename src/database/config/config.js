@@ -6,17 +6,19 @@ module.exports = {
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
     host: process.env.DB_HOST,
-    dialect: "mysql",
-    port : process.env.DB_PORT
+    dialect: "postgres",
+    port : process.env.DB_PORT,
+    dialectOptions: {
+      ssl: true
+    }
   },
   test: {
-    username: "postgres",
+    username: "root",
     password: "root",
     database: "vivebio_db",
     host: "localhost",
     dialect: "postgres",
     port: 5432,
-    /* operatorsAliases: false, */
   },
   production: {
     username: "root",
