@@ -26,20 +26,6 @@ const indexRouterApi = require("./routes/api/index");
 const productsRouterApi = require("./routes/api/product");
 const usersRouterApi = require("./routes/api/users");
 
-
-/* const sequelize = require("./database/config/configpostgres");
-
-async function main() {
-  try {
-    await sequelize.sync({ force: true });
-    console.log("Connection has been established successfully.");
-  } catch (error) {
-    console.error("Unable to connect to the database:", error);
-  }
-}
-
-main(); */
-
 // view engine setup
 app.use(express.static("public"));
 app.use(express.static(path.join(__dirname, "..", "public")));

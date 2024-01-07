@@ -8,7 +8,6 @@ const toThousand = (n) =>
         .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const db = require("../database/models");
 const { Op } = require("sequelize");
-const { forEach } = require("../validations/productAddEditValidator");
 
 module.exports = {
     all: async (req, res) => {
@@ -524,10 +523,10 @@ module.exports = {
     },
 
     search: (req, res) => {
-
+        const query = req.query.keyword.charAt(0).toUpperCase() + req.query.keyword.slice(1).toLowerCase();
         db.Product.findAll({
             where: {
-                [Op.or]: [{ name: { [Op.substring]: req.query.keyword } }],
+                [Op.or]: [{ name: { [Op.substring]: query } }],
             },
             include: ["productImages"],
         })
